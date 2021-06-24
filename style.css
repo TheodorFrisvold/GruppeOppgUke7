@@ -1,0 +1,39 @@
+body {
+    background-color: #563f46;
+}
+
+.parent {
+    display: grid;
+    place-items: center;
+    Border: solid;
+    height: 95vh;
+    background-color: #366b6b;
+    color: #563f46;
+}
+
+#inputField {
+    background-color: #484f4f;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+    padding: 5px;
+    border-radius: 5px;
+    height: 60vh;
+    width: 100vh;
+}
+
+#button {
+    background-color: #484f4f;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-shadow: 2px 2px black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#infoDiv {
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+}

@@ -1,1 +1,49 @@
+************ PLAN ********************
 
+
+Fordeling av oppgaver: 
+
+Morten lager model
+Mailinn tar View og CSS
+Theodor lager model
+Morten lager div for view
+
+Alle 3 fikser funksjoner 
+
+
+!---- HTML ----!
+Lage enkel HTML med div til view. 
+Input text boks
+Button
+info div som ny tekst(morsekode)
+
+!---- CSS ----!
+bakgrunnsfarge til darkmode 
+sentre midt på skjermen og ha stor tekst 
+
+!---- JS ----!
+-- Model --
+* variabel for verdi vi skriver inn i Input-felt
+
+-- Controller --
+* en funksjon for å ta value av inputfeltet og lagre den i en variabel -når vi trykker på knappen-
+    ** en funksjon som setter input tekst til placeholder etter trykket på knapp for å oversette
+* en funksjon som parser teksten og sjekker hver verdi opp mot alfabet-liste, lagrer i variabel
+    ** funksjon som tar verdier fra variabel og oversetter til morsekode, lagrer i output variabel
+    
+
+
+-- View --
+* en showView()-funksjon
+
+
+
+******************** UTFØRELSE ********************
+
+* Theodor & Morten la til arrays for Morse og Bokstaver
+* Morten la til modell
+* Mailinn la til tomme funksjoner
+* Theodor la til setInputTextToSubmittedText
+* Mailinn la til view
+* Morten la til getInputValue()-funksjon
+* Mailinn la til CSS
