@@ -4,7 +4,7 @@ Morse Generator
 
 Oppgavetekst
 
-GruppeOppg @Mailinn @Mats W
+GruppeOppg
 Teamoppgave: Morse Generator!
 Man skal kunne skrive inn ord i et inputfelt, som oversettes til morsesignaler etter entertrykk.
 Jeg legger ved et array med morsekoder, så dere slipper å skrive dette for hånd selv.
