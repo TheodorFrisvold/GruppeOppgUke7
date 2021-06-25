@@ -1,5 +1,5 @@
 //model
-var inputField;
+
 var viewDiv = document.getElementById("view");
 var inputText; // teksten fra input før den er parset
 var parsedText; // teksten etter den er gjort om til morse
@@ -16,8 +16,6 @@ const alphabetArray =   ['a','b','c','d','e','f','g','h',
 
 // start
 updateView();
-inputField = document.getElementById("inputField");
-
 
 //view
 function updateView() {
@@ -38,9 +36,10 @@ function updateView() {
 //* en funksjon for å ta value av inputfeltet og lagre den i en variabel -når vi trykker på knappen-
 function getInputValue()
 {    
-    inputText = "" + inputField.value;
+    var inputField = document.getElementById("inputField").innerHTML;
+    inputText = "" + inputField;
 
-    //setInputTextToSubmittedText();
+    setInputTextToSubmittedText();
     validateAlphabet();
 }
 
@@ -70,11 +69,11 @@ function translate(l)
 }
 
 //  **en funksjon som setter input tekst til placeholder etter trykket på knapp for å oversette
-// function setInputTextToSubmittedText() 
-// {
-//     inputField.value = "";
-//     inputField.setAttribute("placeholder", inputText); 
-// }
+function setInputTextToSubmittedText() 
+{
+    inputField.value = "";
+    inputField.setAttribute("placeholder", inputText); 
+}
 
 
 
