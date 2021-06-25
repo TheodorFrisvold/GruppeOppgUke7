@@ -38,6 +38,7 @@ function getInputValue()
 {    
     var inputField = document.getElementById("inputField").innerHTML;
     inputText = "" + inputField.toLowerCase();
+    inputText = inputText.replace(/&nbsp;/g, ' ');
 
     validateAlphabet();
 }
