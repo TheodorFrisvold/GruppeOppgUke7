@@ -2,7 +2,7 @@
 
 var viewDiv = document.getElementById("view");
 var inputText; // teksten fra input før den er parset
-var parsedText; // teksten etter den er gjort om til morse
+var parsedText = ""; // teksten etter den er gjort om til morse
 
 const morseCodeArray =  [   '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
                             '..', '.---', '-.-', '.-..', '--', '-.', '---', '.--.',
@@ -23,7 +23,7 @@ function updateView() {
     view.innerHTML = `
         
     <div class="parent">
-        <span id="inputField" class="input" role="textbox" contenteditable></span>
+        <span id="inputField" class="input" role="textbox" contenteditable >${updateParsedTextForView()}</span>
         <button id="button" onclick="getInputValue()">Trykk på meg</button>
         <div id="infoDiv"></div>
     </div>
@@ -37,9 +37,8 @@ function updateView() {
 function getInputValue()
 {    
     var inputField = document.getElementById("inputField").innerHTML;
-    inputText = "" + inputField;
+    inputText = "" + inputField.toLowerCase();
 
-    setInputTextToSubmittedText();
     validateAlphabet();
 }
 
@@ -56,24 +55,22 @@ function validateAlphabet()
         parsedText += translate(inputText[i]);
     }
 
-    //dosomethingwithparsedtext
     updateView();
 }
 
+function updateParsedTextForView()
+{
+    if (parsedText == "") return " ";
+    else return parsedText;
+}
 
 //    ** en funksjon som tar verdier fra variabel og oversetter til morsekode, lagrer i output variabel
-function translate(l) 
+function translate(letter) 
 {
-    let alphaArray = alphabetArray.indexOf(l);
-    console.log(alphaArray);
+    let alphaArray = alphabetArray.indexOf(letter);
+    return morseCodeArray[alphaArray];
 }
 
-//  **en funksjon som setter input tekst til placeholder etter trykket på knapp for å oversette
-function setInputTextToSubmittedText() 
-{
-    inputField.value = "";
-    inputField.setAttribute("placeholder", inputText); 
-}
 
 
 
