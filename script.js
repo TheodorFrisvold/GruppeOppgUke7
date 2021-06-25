@@ -53,7 +53,7 @@ function validateAlphabet()
     
     for (i = 0; i < inputLength; i++)
     {
-        parsedText += translate(inputText[i]) + ' ';
+        parsedText += translate(inputText[i]);
     }
 
     updateView();
