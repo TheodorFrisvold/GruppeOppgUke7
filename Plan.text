@@ -51,3 +51,4 @@ sentre midt på skjermen og ha stor tekst
 * Mailinn og Morten gjorde ferdig koden for å bruke index på bokstav i ett array for å hente ut verdien i det andre arrayet
 * Mailinn og Morten la til sjekk for store og små bokstaver
 * Theodor fikset "&nbsp;" bug
+* Theodor gjorde mer bugfixing, la til tegn & ekstra mellomrom 
