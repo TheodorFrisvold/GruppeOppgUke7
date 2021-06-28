@@ -7,46 +7,46 @@ var parsedText = ""; // teksten etter den er gjort om til morse
 const morseCodeArray =  [   '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
                             '..', '.---', '-.-', '.-..', '--', '-.', '---', '.--.',
                             '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-',
-                            '-.--', '--..', ' ', '·−·−', '−−−·', '·−−·−']; //4 siste er space, æ ,ø og å
+                            '-.--', '--..', '&nbsp;', '·−·−', '−−−·', '·−−·−']; //4 siste er space, æ ,ø og å
 
 const alphabetArray =   ['a','b','c','d','e','f','g','h',
                          'i','j','k','l','m','n','o','p',
                          'q','r','s','t','u','v','w','x',
                          'y','z',' ','æ','ø','å'];
 
+const punctuationArray = ['.', ',', '!', '?', ':', ';'] // pushed to alphabetArray onload
+const punctuationMorseArray = ['.-.-.-', '--..--', '-.-.--', '..--..', '---...', '-.-.-.'] // pushed to morseCodeArray onload
+
+
 // start
+pushPunctuation();
 updateView();
-
-//view
-function updateView() {
-    
-    view.innerHTML = `
-        
-    <div class="parent">
-        <span id="inputField" class="input" role="textbox" contenteditable >${updateParsedTextForView()}</span>
-        <button id="button" onclick="getInputValue()">Trykk på meg</button>
-        <div id="infoDiv"></div>
-    </div>
-
-    `;
-}
 
 //controller
 
 //* en funksjon for å ta value av inputfeltet og lagre den i en variabel -når vi trykker på knappen-
+
+function pushPunctuation() {
+    let length = punctuationArray.length;
+    for (let i = 0; i < length; i++) {
+        alphabetArray.push(punctuationArray[i])
+    }
+    for (let i = 0; i < length; i++) {
+        morseCodeArray.push(punctuationMorseArray[i])
+    }
+}
+
 function getInputValue()
 {    
     var inputField = document.getElementById("inputField").innerHTML;
     inputText = "" + inputField.toLowerCase();
-    inputText = inputText.replaceAll('&nbsp;', ' ');
-    inputText = inputText.replaceAll('<div>',' ');
-    inputText = inputText.replaceAll('</div>',' ');
-    inputText = inputText.replaceAll('<br>',' ');
+    let replaceThese = ['&nbsp;', '<div>', '</div>', '<br>']
+    for (let i = 0; i < replaceThese.length; i++) {
+        inputText = inputText.replaceAll(replaceThese[i], ' ')
+    }
 
     validateAlphabet();
 }
-
-
 //* en funksjon som parser teksten og sjekker hver verdi opp mot alfabet-liste, lagrer i variabel
 function validateAlphabet() 
 {
@@ -72,12 +72,20 @@ function updateParsedTextForView()
 function translate(letter) 
 {
     let alphaArray = alphabetArray.indexOf(letter);
-    return morseCodeArray[alphaArray];
+    return morseCodeArray[alphaArray] + ' ';
 }
 
+//view
 
+function updateView() {
 
+    view.innerHTML = `
+        
+    <div class="parent">
+        <span id="inputField" class="input" role="textbox" contenteditable >${updateParsedTextForView()}</span>
+        <button id="button" onclick="getInputValue()">Trykk på meg</button>
+        <div id="infoDiv"></div>
+    </div>
 
-
-
-
+    `;
+}
