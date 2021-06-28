@@ -38,7 +38,7 @@ function getInputValue()
 {    
     var inputField = document.getElementById("inputField").innerHTML;
     inputText = "" + inputField.toLowerCase();
-    inputText = inputText.replace(/&nbsp;/g, ' ');
+    inputText = inputText.replaceAll('&nbsp;', ' ');
     inputText = inputText.replaceAll('<div>',' ');
     inputText = inputText.replaceAll('</div>',' ');
     inputText = inputText.replaceAll('<br>',' ');
