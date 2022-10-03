@@ -1,6 +1,8 @@
 # GruppeOppgUke7
 Morse Generator
 
+Test it here: https://theodorfrisvold.github.io/GruppeOppgUke7/
+
 
 Oppgavetekst
 
